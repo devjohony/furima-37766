@@ -53,7 +53,7 @@ Things you may want to cover:
 | derively_fee_id    | integer             | null: false                   |
 | status_id          | integer             | null: false                   |
 | prefecture_id      | integer             | null: false                   |
-| day_id             | integer             | null: false                   |
+| scheduled_day_id   | integer             | null: false                   |
 | price              | integer             | null: false                   |
 | user               | references          | null: false, foreign_key:true |
 
@@ -63,7 +63,7 @@ Things you may want to cover:
 - belongs_to :user 
 - has_one:purchase
 
-##  purchase　table
+##  　purchase　table
 
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
@@ -84,9 +84,9 @@ Things you may want to cover:
 | postal_code        | string              | null: false                    |
 | prefecture_id      | integer             | null: false                    |
 | municipality       | string              | null: false                    |
-| address            | string              | null: false                    |
+| address            | string              | null: false,foreign_key: true  |
 | building_name      | string              |                                |
-| phone_nambar       | strings             | null: false                    |
+| phone_nambar       | string              | null: false                    |
 
 ### Association
 
