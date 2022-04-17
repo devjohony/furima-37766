@@ -19,7 +19,7 @@
                 <mxCell id="GyPT7v24sfky5DDzzVhB-85" value="addresses" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="60" y="230" width="160" height="260" as="geometry"/>
                 </mxCell>
-                <mxCell id="GyPT7v24sfky5DDzzVhB-86" value="postal_code&#10;&#10;prefecture_id&#10;&#10;municipality&#10;&#10;address&#10;&#10;building_name&#10;&#10;phone_number&#10;&#10;user&#10;&#10;product" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;shadow=1;" vertex="1" parent="GyPT7v24sfky5DDzzVhB-85">
+                <mxCell id="GyPT7v24sfky5DDzzVhB-86" value="postal_code&#10;&#10;prefecture_id&#10;&#10;municipality&#10;&#10;address&#10;&#10;building_name&#10;&#10;phone_number&#10;&#10;purchases" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;shadow=1;" vertex="1" parent="GyPT7v24sfky5DDzzVhB-85">
                     <mxGeometry y="30" width="160" height="230" as="geometry"/>
                 </mxCell>
                 <mxCell id="GyPT7v24sfky5DDzzVhB-87" value="products" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
