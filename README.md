@@ -73,7 +73,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belong_to :product
+- belongs_to :product
 - has_one :address
 
 
@@ -85,8 +85,8 @@ Things you may want to cover:
 | prefecture_id      | integer             | null: false                    |
 | municipality       | string              | null: false                    |
 | address            | string              | null: false                    |
-| building_name      | string              |                                |
-| phone_nambar       | string              | null: false  foreign_key: true |
+| building_name      | string              | null: false, foreign_key: true |
+| phone_number       | string              | null: false                    |
 
 ### Association
 
