@@ -13,8 +13,8 @@ class User < ApplicationRecord
     validates :birthday
   end
 
-  validates :email, presence: true, format: { with: /\A\S+@\S+\.\S+\z/, message: "can't be blank" }
-  validates :password, format: { with: /\A[a-z0-9]+\z/i, message: 'Include both letters and numbers' }, allow_nil: true
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
 
   # 本人情報確認
   with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'Full-width characters' } do
