@@ -3,18 +3,11 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe '#create' do
     context 'ユーザー登録ができる時' do
-      it '' do
+      it '全て正しく入力されれば登録できること' do
+        expect(@user).to be_valid
       end
-    end
-    context 'ユーザー登録ができない時' do
-      it '' do
-      end
-    end
-
-    # ユーザー情報
-    it '全て正しく入力されれば登録できること' do
-      expect(@user).to be_valid
-    end
+  end 
+  context 'ユーザー登録ができない時' do
 
     it 'nicknameがないと登録できない' do
       @user.nickname = nil
@@ -79,6 +72,11 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
       end
+
+    it "passwordが6文字以上の半角英数字混合であれば登録できる" do
+        @user.password = "000aaa"
+        @user.password_confirmation = "000aaa"
+        expect(@user).to be_valid
 
     it "passwordとpassword_confirmationが不一致では登録できない" do
       @user.password = "123456"
