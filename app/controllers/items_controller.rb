@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(product_params)
+    @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
     else
@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(product_params)
+    if @item.update(item_params)
       redirect_to item_path(@item.id)
     else
       render :edit
@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
     params.require(:product).permit(:image, :name, :explanation, :category_id, :derively_fee_id, :status_id, :prefecture_id, :day_id, :price).merge(user_id: current_user.id)
   end
 
-  def set_product
+  def set_item
     @item = item.find(params[:id])
   end
 end
