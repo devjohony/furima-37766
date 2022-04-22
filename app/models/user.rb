@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         has_many :products
+         has_many :purchases
 
   # ユーザー情報
   with_options presence: true do
