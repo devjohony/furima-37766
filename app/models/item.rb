@@ -1,14 +1,14 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
-  belongs_to_active_hash :day
+  belongs_to_active_hash :scheduled_day
   belongs_to_active_hash :derively_fee
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :status
   has_one_attached :image
 
   belongs_to :user
-  has_one    :purchase
+  # has_one    :purchase
 
   with_options presence: true do
     validates :image
@@ -18,13 +18,13 @@ class Item < ApplicationRecord
     validates :derively_fee_id
     validates :status_id
     validates :prefecture_id
-    validates :day_id
+    validates :scheduled_day_id
     validates :price
   end
 
   with_options numericality: { other_than: 0, message: 'select' } do
     validates :category_id
-    validates :day_id
+    validates :scheduled_day_id
     validates :derively_fee_id
     validates :prefecture_id
     validates :status_id
