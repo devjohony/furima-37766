@@ -94,8 +94,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
 
-    # it "新規登録・ログイン共にエラーハンドリングができていること" do
-
+    
     # end
 
     # 本人情報確認
