@@ -24,8 +24,8 @@
       </span>
     </div>
 
-    <% if @item.purchase.blank? %>
-      <% if user_signed_in? && current_user.id == @item.user_id %>
+    <%# <% if @item.purchase.blank? %>
+      <% if user_signed_in? && current_user.id == @item.user_id %> 
       <%# <%= link_to '商品の編集', edit_item_path(@item[:id]), method: :get, class: "item-red-btn" %>
       <%# <p class='or-text'>or</p>
       <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %> %>
@@ -42,42 +42,42 @@
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">出品者</th>
+          <%# <th class="detail-item">出品者</th> %>
           <%# <td class="detail-value"><%= @item.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">カテゴリー</th>
+          <%# <th class="detail-item">カテゴリー</th>
           <td class="detail-value"><%= @item.category.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">商品の状態</th>
+          <%# <th class="detail-item">商品の状態</th>
           <td class="detail-value"><%= @item.status.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">配送料の負担</th>
+          <%# <th class="detail-item">配送料の負担</th>
           <td class="detail-value"><%= @item.derively_fee.name %></td>
+        </tr> %>
+        <tr>
+          <%# <th class="detail-item">発送元の地域</th>
+          <td class="detail-value"><%= @item.prefecture.name %></td> 
         </tr>
         <tr>
-          <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= @item.prefecture.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">発送日の目安</th>
+          <%# <th class="detail-item">発送日の目安</th>
           <td class="detail-value"><%= @item.scheduled_day.name %></td>
         </tr>
       </tbody>
     </table>
-    <div class="option">
+    <%# <div class="option">
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+        <%# <span>お気に入り 0</span>
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
         <span>不適切な商品の通報</span>
-      </div>
+      </div> 
     </div>
-  </div>
+  </div> %>
   <%# /商品の概要 %>
 
   <div class="comment-box">
@@ -102,11 +102,11 @@
       後ろの商品 ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
+  <%# <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
 </div>
 
 <%= render "shared/footer" %>
-© 2022 GitHub, Inc.
+<%# © 2022 GitHub, Inc.
 Terms
 Privacy
-Security
+Security %>
