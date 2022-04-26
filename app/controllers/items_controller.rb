@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :require_login, only: :new, alert: 'You need to sign in or sign up before continuing.'
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+   before_action :authenticate_user!, only: [:new, :edit] 
+   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -22,16 +22,16 @@ class ItemsController < ApplicationController
   def show
   end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   if @item.update(item_params)
-  #     redirect_to item_path(@item.id)
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+  if @item.update(item_params)
+  redirect_to item_path(@item.id)
+  else
+  render :edit
+  end
+  end
 
   # def destroy
   #   if @item.destroy
@@ -44,6 +44,7 @@ class ItemsController < ApplicationController
   private
 
   def require_login
+    
     redirect_to user_session_path, alert: 'You need to sign in or sign up before continuing.' unless user_signed_in?
   end
 
