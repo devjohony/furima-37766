@@ -33,17 +33,16 @@ class ItemsController < ApplicationController
   end
   end
 
+  before_action :authenticate_user!, only: [:new, :edit]
   def destroy
-  if user_signed_in?
-  if current_user.id == @item.user_id
-  if @item.destroy
-  redirect_to root_path
-  else
-  redirect :show
+    if current_user.id == @item.user_id
+      @item.destroy
+    end
+    redirect_to root_path
   end
-  end
-  end
-  end
+  
+  
+  
 
   private
 
