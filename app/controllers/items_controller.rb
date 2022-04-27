@@ -33,7 +33,6 @@ class ItemsController < ApplicationController
   end
   end
 
-  before_action :authenticate_user!, only: [:new, :edit]
   def destroy
     if current_user.id == @item.user_id
       @item.destroy
