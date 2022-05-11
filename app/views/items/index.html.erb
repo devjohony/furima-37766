@@ -135,11 +135,11 @@
         <div class='item-img-content'>
           <%= image_tag item.image, class: "item-img" %>
 
-          <%# <% if product.purchase.present? %>
-          <%# <% <div class='sold-out'>
+          <% if item.purchase.present? %>
+          <div class='sold-out'>
             <span>Sold Out!!</span>
-          </div> %>
-          <%# <% <% end %>
+          </div>
+         <% end %>
 
         </div>
         <div class='item-info'>
