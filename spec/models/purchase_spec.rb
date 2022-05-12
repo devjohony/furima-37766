@@ -12,18 +12,17 @@ RSpec.describe PurchaseAddress, type: :model do
     # 購入関連
 
     context 'ユーザー登録ができる時' do
-      it '' do
-      end
-    end
 
     it '必須項目を入力した上で購入ができる' do
       expect(@purchase).to  be_valid
     end
+  end
 
-    context 'ユーザー登録ができない時' do
-      it '' do
-      end
+  it '建物名がからでも購入できる' do
+    expect(@street_address).to  be_valid
     end
+
+  context 'ユーザー登録ができない時' do
 
     it '郵便番号がないと登録できない' do
       @purchase.postal_code = nil
@@ -67,5 +66,35 @@ RSpec.describe PurchaseAddress, type: :model do
       expect(@purchase.errors.full_messages).to include('Postal code Input correctly')
     end
 
+    it '電話番号が12桁以上あると登録できない' do
+      @purchase.phone_number = 12_345_678_910_123_111
+      @purchase.valid?
+      expect(@purchase.errors.full_messages).to include('Phone number is invalid')
+    end
+
+    it 'phone_numberが9桁以下では購入できない' do
+      @purchase.phone_number = "0901234567"
+      @purchase.valid?
+      expect(@purchase.errors.full_messages).to include("Phone number is invalid")
+    end
+
+    it 'トークンが空だと購入できない' do
+      @purchase.token = nil
+      @purchase.valid?
+      expect(@purchase.errors.full_messages).to include("Token can't be blank")
+    end
+
+    it 'item_idが空だと購入できない' do
+      @purchase.item_id = nil
+      @purchase.valid?
+      expect(@purchase.errors.full_messages).to include("Item can't be blank")
+  end
+
+  it 'user_idが空だと購入できない' do
+    @purchase.user_id = nil
+    @purchase.valid?
+    expect(@purchase.errors.full_messages).to include("User can't be blank")
+  end
+end
 end
 end
