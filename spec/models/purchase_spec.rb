@@ -10,8 +10,19 @@ RSpec.describe PurchaseAddress, type: :model do
       @purchase = FactoryBot.build(:purchase_address, item_id: @item.id, user_id: @user.id)
     end
     # 購入関連
+
+    context 'ユーザー登録ができる時' do
+      it '' do
+      end
+    end
+
     it '必須項目を入力した上で購入ができる' do
       expect(@purchase).to  be_valid
+    end
+
+    context 'ユーザー登録ができない時' do
+      it '' do
+      end
     end
 
     it '郵便番号がないと登録できない' do
@@ -55,5 +66,6 @@ RSpec.describe PurchaseAddress, type: :model do
       @purchase.valid?
       expect(@purchase.errors.full_messages).to include('Postal code Input correctly')
     end
-  end
+
+end
 end

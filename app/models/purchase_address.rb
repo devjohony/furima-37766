@@ -9,7 +9,9 @@ class PurchaseAddress
     validates :prefecture_id, numericality: { other_than: 0, message: 'select' }
     validates :municipality
     validates :address
-    validates :phone_number, format: { with: /(0{1}\d{9,10})/ }
+    validates :phone_number, format: { with: /(0{1}\d{10,11})/ }
+    validates :user_id
+    validates :item_id
   end
 
   def save
