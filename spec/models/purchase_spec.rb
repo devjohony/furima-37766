@@ -18,7 +18,7 @@ RSpec.describe PurchaseAddress, type: :model do
     end
   end
 
-  it '建物名がからでも購入できる' do
+  it '建物名が空でも購入できる' do
     expect(@street_address).to  be_valid
     end
 
