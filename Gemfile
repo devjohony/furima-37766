@@ -1,6 +1,3 @@
-group :development do
-  gem 'rubocop', require: false
-end
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
